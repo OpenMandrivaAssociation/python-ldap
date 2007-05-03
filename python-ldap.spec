@@ -1,6 +1,6 @@
 %define name python-ldap
-%define version 2.2.1
-%define rel 3
+%define version 2.3
+%define rel 1
 
 %define release %mkrel %rel
 
@@ -13,7 +13,8 @@ License:	Modified CNRI Open Source License
 Group: 		Development/Python
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
 Url: 		http://python-ldap.sourceforge.net/
-BuildRequires:	openldap-devel python-devel
+BuildRequires:	openldap-devel >= 2.3
+BuildRequires:	python-devel
 Requires: 	python
 
 %description
