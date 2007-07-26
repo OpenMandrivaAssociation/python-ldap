@@ -9,7 +9,6 @@ Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
 Source0: 	%{name}-%{version}.tar.gz
-Patch:		python-ldap-2.3-rfc4525.patch
 License:	Modified CNRI Open Source License
 Group: 		Development/Python
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
@@ -28,7 +27,6 @@ Additionally the package contains modules for other LDAP-related stuff
 
 %prep
 %setup -q
-#patch -p0 -b .rfc4525
 perl -pi -e 's,^(library_dirs.*=).*,$1,g' setup.cfg
 chmod a+r -R .
 
