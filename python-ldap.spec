@@ -1,5 +1,5 @@
 %define name python-ldap
-%define version 2.3
+%define version 2.3.1
 %define rel 1
 
 %define release %mkrel %rel
@@ -28,7 +28,7 @@ Additionally the package contains modules for other LDAP-related stuff
 
 %prep
 %setup -q
-%patch -p0 -b .rfc4525
+#patch -p0 -b .rfc4525
 perl -pi -e 's,^(library_dirs.*=).*,$1,g' setup.cfg
 chmod a+r -R .
 
