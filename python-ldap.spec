@@ -11,7 +11,6 @@ Release: 	%{release}
 Source0: 	%{name}-%{version}.tar.gz
 License:	Modified CNRI Open Source License
 Group: 		Development/Python
-BuildRoot: 	%{_tmppath}/%{name}-buildroot
 Url: 		http://python-ldap.sourceforge.net/
 BuildRequires:	openldap-devel >= 2.3
 BuildRequires:	python-devel
