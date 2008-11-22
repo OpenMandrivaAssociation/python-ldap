@@ -1,5 +1,5 @@
 %define name python-ldap
-%define version 2.3.4
+%define version 2.3.5
 %define rel 1
 
 %define release %mkrel %rel
