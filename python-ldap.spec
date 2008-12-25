@@ -1,6 +1,6 @@
 %define name python-ldap
 %define version 2.3.5
-%define rel 1
+%define rel 2
 
 %define release %mkrel %rel
 
@@ -14,8 +14,7 @@ Group: 		Development/Python
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
 Url: 		http://python-ldap.sourceforge.net/
 BuildRequires:	openldap-devel >= 2.3
-BuildRequires:	python-devel
-Requires: 	python
+%py_requires -d
 
 %description
 python-ldap provides an object-oriented API to access LDAP directory 
