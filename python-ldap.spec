@@ -8,7 +8,7 @@ Summary: 	Various LDAP-related Python modules
 Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
-Source0: 	%{name}-%{version}.tar.gz
+Source0: 	http://pypi.python.org/packages/source/p/python-ldap/python-ldap-%{version}.tar.gz
 License:	Modified CNRI Open Source License
 Group: 		Development/Python
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
