@@ -1,6 +1,6 @@
 %define name python-ldap
 %define version 2.3.11
-%define rel 2
+%define rel 3
 %define release %mkrel %rel
 
 Summary: 	Various LDAP-related Python modules
@@ -8,6 +8,7 @@ Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
 Source0: 	http://pypi.python.org/packages/source/p/python-ldap/python-ldap-%{version}.tar.gz
+Patch0:		python-ldap-2.3.11-fix-link.patch
 License:	Modified CNRI Open Source License
 Group: 		Development/Python
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
@@ -25,21 +26,23 @@ Additionally the package contains modules for other LDAP-related stuff
 
 %prep
 %setup -q
+%patch0 -p0
 perl -pi -e 's,^(library_dirs.*=).*,$1,g' setup.cfg
 chmod a+r -R .
 
 %build
-export CFLAGS="$RPM_OPT_FLAGS -I%{_includedir}/sasl"
+export CFLAGS="%{optflags} -I%{_includedir}/sasl"
+export LDFLAGS="%{?ldflags}"
 python setup.py build
 
 %install
 rm -Rf %{buildroot}
-python setup.py install --root=$RPM_BUILD_ROOT --record=INSTALLED_FILES
+python setup.py install --root=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f INSTALLED_FILES
+%files
 %defattr(-,root,root)
 %doc CHANGES README INSTALL TODO Demo/
-
+%python_sitearch/*
