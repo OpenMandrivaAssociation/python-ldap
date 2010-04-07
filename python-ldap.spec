@@ -1,6 +1,6 @@
 %define name python-ldap
 %define version 2.3.11
-%define rel 3
+%define rel 4
 %define release %mkrel %rel
 
 Summary: 	Various LDAP-related Python modules
@@ -27,7 +27,6 @@ Additionally the package contains modules for other LDAP-related stuff
 %prep
 %setup -q
 %patch0 -p0
-perl -pi -e 's,^(library_dirs.*=).*,$1,g' setup.cfg
 chmod a+r -R .
 
 %build
