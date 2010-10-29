@@ -1,6 +1,6 @@
 %define name python-ldap
 %define version 2.3.11
-%define rel 5
+%define rel 6
 %define release %mkrel %rel
 
 Summary: 	Various LDAP-related Python modules
