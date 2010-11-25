@@ -1,6 +1,6 @@
 %define name python-ldap
-%define version 2.3.11
-%define rel 6
+%define version 2.3.12
+%define rel 1
 %define release %mkrel %rel
 
 Summary: 	Various LDAP-related Python modules
@@ -8,13 +8,13 @@ Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
 Source0: 	http://pypi.python.org/packages/source/p/python-ldap/python-ldap-%{version}.tar.gz
-Patch0:		python-ldap-2.3.11-fix-link.patch
+Patch0:		python-ldap-2.3.12-fix-link.patch
 License:	Modified CNRI Open Source License
 Group: 		Development/Python
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
 Url: 		http://python-ldap.sourceforge.net/
 BuildRequires:	openldap-devel >= 2.3
-%py_requires -d
+BuildRequires:	python-devel
 
 %description
 python-ldap provides an object-oriented API to access LDAP directory 
