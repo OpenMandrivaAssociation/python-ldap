@@ -1,6 +1,6 @@
 %define name python-ldap
-%define version 2.3.12
-%define rel 2
+%define version 2.4.0
+%define rel 1
 %define release %mkrel %rel
 
 Summary: 	Various LDAP-related Python modules
@@ -8,12 +8,12 @@ Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
 Source0: 	http://pypi.python.org/packages/source/p/python-ldap/python-ldap-%{version}.tar.gz
-Patch0:		python-ldap-2.3.12-fix-link.patch
+Patch0:		python-ldap-2.4.0-fix-link.patch
 License:	Modified CNRI Open Source License
 Group: 		Development/Python
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
 Url: 		http://python-ldap.sourceforge.net/
-BuildRequires:	openldap-devel >= 2.3
+BuildRequires:	openldap-devel >= 2.4.11
 BuildRequires:	python-devel
 
 %description
@@ -27,11 +27,8 @@ Additionally the package contains modules for other LDAP-related stuff
 %prep
 %setup -q
 %patch0 -p0
-chmod a+r -R .
 
 %build
-export CFLAGS="%{optflags} -I%{_includedir}/sasl"
-export LDFLAGS="%{?ldflags}"
 python setup.py build
 
 %install
