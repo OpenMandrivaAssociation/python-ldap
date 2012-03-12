@@ -1,5 +1,5 @@
 %define name python-ldap
-%define version 2.4.0
+%define version 2.4.8
 %define rel 1
 %define release %mkrel %rel
 
@@ -8,7 +8,7 @@ Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
 Source0: 	http://pypi.python.org/packages/source/p/python-ldap/python-ldap-%{version}.tar.gz
-Patch0:		python-ldap-2.4.0-fix-link.patch
+Patch0:		python-ldap-2.4.6-dirs.patch
 License:	Modified CNRI Open Source License
 Group: 		Development/Python
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
@@ -26,7 +26,7 @@ Additionally the package contains modules for other LDAP-related stuff
 
 %prep
 %setup -q
-%patch0 -p0
+%patch0 -p1
 
 %build
 python setup.py build
