@@ -1,20 +1,14 @@
-%define name python-ldap
-%define version 2.4.8
-%define rel 1
-%define release %mkrel %rel
-
-Summary: 	Various LDAP-related Python modules
-Name: 		%{name}
-Version: 	%{version}
-Release: 	%{release}
-Source0: 	http://pypi.python.org/packages/source/p/python-ldap/python-ldap-%{version}.tar.gz
+Summary:	Various LDAP-related Python modules
+Name:		python-ldap
+Version:	2.4.8
+Release:	2
+Source0:	http://pypi.python.org/packages/source/p/python-ldap/python-ldap-%{version}.tar.gz
 Patch0:		python-ldap-2.4.6-dirs.patch
 License:	Modified CNRI Open Source License
-Group: 		Development/Python
-BuildRoot: 	%{_tmppath}/%{name}-buildroot
-Url: 		http://python-ldap.sourceforge.net/
+Group:		Development/Python
+Url:		http://python-ldap.sourceforge.net/
 BuildRequires:	openldap-devel >= 2.4.11
-BuildRequires:	python-devel
+BuildRequires:	pkgconfig(python2)
 
 %description
 python-ldap provides an object-oriented API to access LDAP directory 
@@ -27,18 +21,14 @@ Additionally the package contains modules for other LDAP-related stuff
 %prep
 %setup -q
 %patch0 -p1
+find -type f|xargs chmod 644
 
 %build
 python setup.py build
 
 %install
-rm -Rf %{buildroot}
 python setup.py install --root=%{buildroot}
 
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
-%doc CHANGES README INSTALL TODO Demo/
-%python_sitearch/*
+%doc CHANGES README TODO Demo/
+%{python_sitearch}/*
