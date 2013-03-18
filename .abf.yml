@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   python-ldap-2.4.8.tar.gz: c338cda845e2315e0f5434acc497feef18def6bd
+sources:
+  python-ldap-2.4.10.tar.gz: 68b5903d6467e9b5d43d649d3b51cb52d486f2d9
