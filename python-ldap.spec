@@ -2,11 +2,11 @@ Summary:	Various LDAP-related Python modules
 Name:		python-ldap
 Version:	2.4.12
 Release:	1
-Source0:	http://pypi.python.org/packages/source/p/python-ldap/%{name}-%{version}.tar.gz
-Patch0:		python-ldap-2.4.6-dirs.patch
 License:	Modified CNRI Open Source License
 Group:		Development/Python
 Url:		http://python-ldap.sourceforge.net/
+Source0:	http://pypi.python.org/packages/source/p/python-ldap/%{name}-%{version}.tar.gz
+Patch0:		python-ldap-2.4.6-dirs.patch
 BuildRequires:	openldap-devel >= 2.4.11
 BuildRequires:	pkgconfig(python2)
 
@@ -20,7 +20,7 @@ Additionally the package contains modules for other LDAP-related stuff
 
 %prep
 %setup -q
-%patch0 -p1
+%apply_patches
 find -type f|xargs chmod 644
 
 %build
@@ -32,3 +32,4 @@ python setup.py install --root=%{buildroot}
 %files
 %doc CHANGES README TODO Demo/
 %{python_sitearch}/*
+
