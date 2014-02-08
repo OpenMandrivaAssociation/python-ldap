@@ -1,7 +1,7 @@
 Summary:	Various LDAP-related Python modules
 Name:		python-ldap
 Version:	2.4.12
-Release:	1
+Release:	2
 Source0:	http://pypi.python.org/packages/source/p/python-ldap/%{name}-%{version}.tar.gz
 Patch0:		python-ldap-2.4.6-dirs.patch
 License:	Modified CNRI Open Source License
