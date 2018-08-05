@@ -9,6 +9,7 @@ Source0:	https://pypi.python.org/packages/source/p/python-ldap/%{name}-%{version
 BuildRequires:	openldap-devel >= 2.4.11
 BuildRequires:	pkgconfig(python2)
 BuildRequires:	pkgconfig(libsasl2)
+BuildRequires:	pkgconfig(openssl)
 
 %description
 python-ldap provides an object-oriented API to access LDAP directory 
