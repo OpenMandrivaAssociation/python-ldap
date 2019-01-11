@@ -1,11 +1,11 @@
 Summary:	Various LDAP-related Python modules
 Name:		python-ldap
-Version:	2.4.18
-Release:	5
+Version:	3.1.0
+Release:	1
 License:	Modified CNRI Open Source License
 Group:		Development/Python
 Url:		http://python-ldap.sourceforge.net/
-Source0:	https://pypi.python.org/packages/source/p/python-ldap/%{name}-%{version}.tar.gz
+Source0:	https://pypi.io/packages/source/p/python-ldap/%{name}-%{version}.tar.gz
 BuildRequires:	openldap-devel >= 2.4.11
 BuildRequires:	pkgconfig(python2)
 BuildRequires:	pkgconfig(libsasl2)
@@ -33,5 +33,3 @@ python2 setup.py install --root=%{buildroot}
 %files
 %doc CHANGES README TODO Demo/
 %{py2_platsitedir}/*
-
-
