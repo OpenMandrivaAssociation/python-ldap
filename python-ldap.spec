@@ -21,7 +21,7 @@ Additionally the package contains modules for other LDAP-related stuff
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 find -type f|xargs chmod 644
 
 %build
