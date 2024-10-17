@@ -4,7 +4,7 @@ Version:	3.4.3
 Release:	1
 License:	Modified CNRI Open Source License
 Group:		Development/Python
-Url:		http://python-ldap.sourceforge.net/
+Url:		https://python-ldap.sourceforge.net/
 Source0:	https://pypi.python.org/packages/source/p/python-ldap/%{name}-%{version}.tar.gz
 BuildRequires:	pkgconfig(python3)
 BuildRequires:	pkgconfig(libsasl2)
