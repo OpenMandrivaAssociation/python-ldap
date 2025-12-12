@@ -1,7 +1,7 @@
 Summary:	Various LDAP-related Python modules
 Name:		python-ldap
 Version:	3.4.3
-Release:	1
+Release:	2
 License:	Modified CNRI Open Source License
 Group:		Development/Python
 Url:		https://python-ldap.sourceforge.net/
