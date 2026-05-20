@@ -3,7 +3,7 @@
 
 Name:		python-ldap
 Summary:	Python modules for implementing LDAP clients
-Version:	3.4.6
+Version:	3.4.7
 Release:	1
 License:	python-ldap AND MIT
 Group:		Development/Python
